@@ -1,0 +1,50 @@
+spring:
+  application:
+    name: flight-planner-backend
+
+  datasource:
+    url: jdbc:postgresql://${POSTGRES_HOST:localhost}:${POSTGRES_PORT:5432}/${POSTGRES_DB:flightplanner}
+    username: ${POSTGRES_USER:flightplanner}
+    password: ${POSTGRES_PASSWORD:localdev123}
+    driver-class-name: org.postgresql.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+
+  jackson:
+    property-naming-strategy: LOWER_CAMEL_CASE
+    serialization:
+      write-dates-as-timestamps: false
+
+server:
+  port: ${SERVER_PORT:3001}
+
+# CORS configuration
+cors:
+  allowed-origins: ${CORS_ORIGINS:http://localhost:5173}
+
+# API security
+api:
+  key: ${API_KEY:dev-key}
+
+logging:
+  level:
+    com.flightplanner: DEBUG
+    org.springframework.web: INFO
+    org.hibernate.SQL: DEBUG
+
+# SpringDoc OpenAPI configuration
+springdoc:
+  api-docs:
+    path: /api-docs
+  swagger-ui:
+    path: /swagger-ui.html
+    operations-sorter: method
+    tags-sorter: alpha
+

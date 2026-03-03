@@ -1,0 +1,27 @@
+{
+  "name": "flight-planner-monorepo",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Flight Planner - Java Spring Boot backend with React frontend",
+  "scripts": {
+    "fetch-airports": "tsx scripts/fetch-airports.ts",
+    "lint": "eslint . --ext .ts,.tsx",
+    "lint:fix": "npm run lint --fix",
+    "format": "prettier . --write",
+    "format:check": "prettier . --check"
+  },
+  "devDependencies": {
+    "@types/node": "^20.16.5",
+    "@typescript-eslint/eslint-plugin": "^8.44.1",
+    "@typescript-eslint/parser": "^8.44.1",
+    "baseline-browser-mapping": "^2.9.14",
+    "eslint": "^8.57.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-import": "^2.29.1",
+    "eslint-plugin-react": "^7.33.2",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "prettier": "^3.3.3",
+    "tsx": "^4.19.0",
+    "typescript": "^5.5.4"
+  }
+}
